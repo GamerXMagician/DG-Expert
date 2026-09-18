@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-steel-50 text-steel-900 dark:bg-steel-950 dark:text-steel-100;
+  }
+  * {
+    scrollbar-width: thin;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-steel-200 bg-white shadow-sm
+           dark:border-steel-800 dark:bg-steel-900;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5
+           text-sm font-semibold transition-colors focus:outline-none
+           focus-visible:ring-2 focus-visible:ring-brand-500 disabled:opacity-50
+           disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-secondary {
+    @apply btn border border-steel-300 bg-white text-steel-800 hover:bg-steel-100
+           dark:border-steel-700 dark:bg-steel-800 dark:text-steel-100 dark:hover:bg-steel-700;
+  }
+  .btn-ghost {
+    @apply btn text-steel-700 hover:bg-steel-100 dark:text-steel-200 dark:hover:bg-steel-800;
+  }
+  .input {
+    @apply w-full rounded-lg border border-steel-300 bg-white px-3.5 py-2.5 text-sm
+           text-steel-900 placeholder-steel-400 focus:border-brand-500
+           focus:outline-none focus:ring-1 focus:ring-brand-500
+           dark:border-steel-700 dark:bg-steel-800 dark:text-steel-100;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-steel-700 dark:text-steel-300;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .safety-note {
+    @apply rounded-lg border-l-4 border-safety-500 bg-safety-500/10 p-4 text-sm
+           text-steel-800 dark:text-steel-100;
+  }
+}
